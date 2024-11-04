@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Address Issues</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script type="text/javascript" src="utilities.js">
+    </script>
+    <style>
+      .btn-primary {
+        --mdb-btn-active-bg: #19335c;
+	      }
+        .card {
+          display: none;
+        }
+        #level2 .container-md{
+          display: none
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <i class="fas fa-house" style="color: #1266f1; "></i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/">VA Dept. of Elections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/casting-a-ballot/polling-place-lookup/">Polling Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status">My Status</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="p-2 bg-body-tertiary mb-2 mx-auto " style="max-width: 600px;">
+  <h1 class="text-center ">Address Issues</h1>
+  <p class="alert-warning text-start p-2">The address the voter provides orally or in writing must match the address in the pollbook</p>
+   <p>The provided address <strong>does NOT have to match the address on the ID</strong>.
+    <ul>
+      <li>If an address on an ID does not match the address on the pollbook, it does not make the ID unacceptable for proving voter identity.</li>
+      <li>Some acceptable forms of ID do not have an address.</li>
+    </ul>
+    </p>
+    <p>A voter who moved out of town cannot vote in the town election but may be eligible to vote in non-town elections § 24.2-101; Qualified voter in a town.</p>
+
+  <div class="container-md pb-2" id="addressq1">
+    <p>Where are they registered?</p>
+      <select  id="addressq1s" class="form-select" aria-label="Default select example" onchange="addressChoice();">
+        <option value="-1" selected>Choose...</option>
+        <option value="0">This precinct</option>
+        <option value="1">This city/county AND congressional district</option>
+        <option value="2">A different city/county or congressional district in VA</option>
+      </select>
+    </div>
+  
+    <div class="container-md  pb-2 " id="addressq2">
+      <p>Where do they live?</p>
+      <select id="addressq2s" class="form-select" aria-label="Default select example" onchange="addressChoice();">
+        <option value="-1" selected>Choose...</option>
+        <option value="0">This precinct</option>
+        <option value="1">This city/county AND congressional district</option>
+        <option value="2">A different city/county or congressional district in VA</option>
+        <option value="3">Outside VA</option>
+      </select>
+    </div>
+  
+  </div>
+
+<div class="container" id="level2">
+
+  <div class="container-md pb-2 " id="addressq3"  style="max-width: 600px;">
+    <p>When did they move?</p>
+    <select id="addressq3s" class="form-select" aria-label="Default select example" onchange="addressChoice();">
+      <option value="-1" selected>Choose...</option>
+      <option value="0">On or after 11/8/2023</option>
+      <option value="1">From 11/4/2020 through 11/7/2023</option>
+      <option value="2">On or before 11/3/2020</option>
+    </select>
+  </div>
+
+  <div class="container-md pb-2 " id="president1"  style="max-width: 600px;">
+    <p>Is this a presidential election?</p>
+    <a href="javascript:showEl('president2','q1b2','president1');" id="q1b2" class="btn btn-primary">Yes</a>
+    <a href="javascript:showEl('cancellation','q1b3','president1');" id="q1b3" class="btn btn-primary">No</a>
+    </div>
+
+  <div class="container-md pb-2 " id="president2"  style="max-width: 600px;">
+    <p>When did they move?</p>
+    <a href="javascript:showEl('cancellation','q2b1','president1');" id="q2b1" class="btn btn-primary">Over 30 days ago</a>
+    <a href="javascript:showEl('presidentOnly','q2b2',['president1','president2']);" id="q2b2" class="btn btn-primary">Less than 30 days ago</a>
+    </select>
+  </div>
+
+</div>
+  
+<div class="container pb-3">
+
+    <!-- Card -->
+      <!-- Card -->
+      <div class="card " id="a1">
+        <div class="card-body">
+          <h5 class="card-title">Moved within precinct</h5>
+          <p class="card-text">If a voter has moved within the same precinct, they can vote, but should update their registration.</p>
+          <p class="card-text">There may be a ? next to voter's name or the pollbook says 'inactive' or 'marked for address confirmation'.</p>
+          <ol>
+              <li>Officer asks voter to complete and sign a Voter Registration Application.</li>
+              <li>Officer checks voter into the pollbook as normal.</li>
+              <li>Officer places completed documents in Envelope #8.</li>
+              <li>Voter casts ballot as normal in the precinct.</li>
+            </ol>
+        <p class="card-text">Do not enter voter's new address in pollbook.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <div class="card" id="a2">
+        <div class="card-body">
+          <h5 class="card-title">Voter registered here; Voter moved to a different precinct on or after November 8, 2023</h5>
+          <p class="card-text">Voter is registered in this precinct, but voter moved to a different precinct within the same county/city AND congressional district. They vote here.
+          </p>
+          <ol>
+            <li>Voter completes and signs a Voter Registration Application.</li>
+            <li>Officer checks voter into the pollbook as normal.</li>
+            <li>Voter casts ballot as normal in precinct where still registered.</li>
+            <li>Officer places completed documents in Envelope #8.</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <div class="card" id="a2NotThis">
+        <div class="card-body">
+          <h5 class="card-title">Voter registered in different precinct; Voter moved to this precinct on or after November 8, 2023</h5>
+          <p class="card-text">Voter can vote in the precinct within the city/county and district where they are registered. They vote in that precinct.
+          </p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <div class="card" id="a3">
+        <div class="card-body">
+          <h5 class="card-title">Voter registered here; moved to different precinct from November 4, 2020 through November 7, 2023</h5>
+          <p class="card-text">Voter is registered in this precinct, but moved to a different precinct within the same county/city AND congressional district. They should complete the Affirmation of Eligibility.</p>
+          <ol>
+            <li>Officer fills out and initials Section A on the Affirmation of Eligibility form and checks Box C and Box 4.</li>
+            <li>Voter fills out and signs Section B - Affirmation of Voter using their new address.</li>
+            <li>Officer checks voter into the pollbook and indicates in the pollbook that a statement or oath was signed.</li>
+            <li>Voter casts ballot as normal in precinct where still registered.</li>
+            <li>Officer places completed documents in Envelope #8.</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Card -->
+      
+      <div class="card" id="a3NotThis">
+        <div class="card-body">
+          <h5 class="card-title">Voter registered in different precinct; moved to this precinct from November 4, 2020 through November 7, 2023</h5>
+          <p class="card-text">Voter can vote in the precinct within this city/county and district where they are registered with the Affirmation of Eligibility.</p>
+         </div>
+      </div>
+      <!-- Card -->
+
+
+      <!-- Card -->
+      <div class="card " id="provisional">
+        <div class="card-body">
+          <h5 class="card-title">Provisional Ballot where they live</h5>
+          <p class="card-text">The voter can vote a <a href="provisional.html">Provisional Ballot</a> <strong>in the precinct where they live</strong>.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card " id="provisionalThis">
+        <div class="card-body">
+          <h5 class="card-title">Provisional Ballot in this precinct</h5>
+          <p class="card-text">The voter can vote a <a href="provisional.html">Provisional Ballot</a> <strong>in this precinct</strong>.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card " id="cancellation">
+        <div class="card-body">
+          <h5 class="card-title">Voter is no longer eligible to vote in Virginia.</h5>
+          <p class="card-text">
+            <ol>
+            <li>Ask voter to fill out a Cancellation Request form (ELECT 427(A)) or write and sign a note that:
+                <ul>
+                <li>states they have moved out of state;</li>
+                <li>asks to cancel their Virginia voter registration; and</li>
+                <li>includes their name, date of birth, and new address, (SSN optional).</li>
+              </ul>
+            </li>
+            <li>Place Cancellation Request or note in Envelope #8.</li>
+            </ol>
+            <p>If voter insists they are registered and eligible to vote in the precinct, they may vote a <a href="provisional.html">Provisional Ballot</a>.
+        </div>
+      </div>
+      <!-- Card -->
+
+
+      <!-- Card -->
+      <div class="card " id="presidentOnly">
+        <div class="card-body">
+          <h5 class="card-title">Voter may vote a “Presidential-Only” Ballot</h5>
+          <p class="card-text">This is a presidential election AND voter moved out of state less than 30 days ago.
+            <ol>
+            <li>Officer fills out and initials Section A on the Affirmation of Eligibility form and checks Box C and Box 3.</li>
+            <li>Voter fills out and signs Section B – Affirmation of Voter using new address.</li>
+            <li>Officer tells voter that the General Registrar will cancel the voter’s Virginia registration after this election</li>
+            <li>Officer checks voter into the pollbook and indicates in the pollbook that a statement was signed</li>
+            <li>Officer indicates in the pollbook that voter voted a presidential-only ballot</li>
+            <li>Officer issues a presidential-only ballot</li>
+            <li>Voter casts presidential-only ballot as normal in the precinct.</li>
+            <li>Place Cancellation Request or note in Envelope #8.</li>
+            </ol>
+            <p>If voter insists they are registered and eligible to vote in the precinct, they may vote a <a href="provisional.html">Provisional Ballot</a>.
+        </div>
+      </div>
+      <!-- Card -->
+
+
+    </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+   <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    This site is not affiliated with the VA Dept of Elections in any way. It was created as a way to learn and streamline decisions processes.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

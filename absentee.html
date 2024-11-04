@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Absentee Ballots</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script type="text/javascript" src="utilities.js">
+    </script>
+    <style>
+      .btn-primary {
+        --mdb-btn-active-bg: #19335c;
+	      }
+        .card {
+          display: none;
+        }
+        #level2 .container-md{
+          display: none
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <i class="fas fa-house" style="color: #1266f1; "></i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/">VA Dept. of Elections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/casting-a-ballot/polling-place-lookup/">Polling Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status">My Status</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="p-2 bg-body-tertiary mb-2 mx-auto " style="max-width: 600px;">
+  <h1 class="text-center">Absentee Ballots</h1>
+  <p>Does the voter have their ballot?</p>
+  <a href="javascript:showEl('withballot','b1'); " id="b1" class="btn btn-primary">Yes, the voter has their ballot</a>
+  <a href="javascript:showEl('q2','b2'); " id="b2" class="btn btn-primary">No, the voter does NOT have their ballot</a>
+  <p>Voters marked with a federal symbol F in pollbook may vote a ballot for federal offices only. A ballot issued to this voter must be a federal-only ballot.</p>
+  
+</div>
+
+<div class="container" id="level2" style="max-width: 600px;">
+  <div class="container-md  pb-2 " id="q2">
+    <a href="javascript:showEl('unmarked','q2b4');" id="q2b4" class="btn btn-primary">Status is "Issued" or "Unmarked"</a>
+    <a href="javascript:showEl('marked','q2b5');" id="q2b5" class="btn btn-primary">Status is "Marked" or "On Machine"</a>
+  </div>  
+</div>
+    
+<div class="container pb-3">
+
+    <!-- Card -->
+    <div class="card" id="withballot">
+      <div class="card-body">
+        <h5 class="card-title">Absentee voter comes to polling place WITH their absentee ballot</h5>
+        <ol>
+          <li>Officer makes sure that voter’s name in the pollbook OR Final Absentee List shows status as “Issued” or “Unmarked.” If not, call general registrar’s office.</li>
+          <li>Officer notes on the absentee voter applicant list, opposite the name of the person returning the ballot, the fact that the ballot was returned unused and the date of the return.</li>
+          <li>Voter removes ballot from envelope and writes ‘SPOILED’ on the front of the ballot. If voter filled in any part of the ballot, they can fill in the rest of the ovals for privacy.</li>
+          <li>Voter returns the ballot and any other related materials to the envelope or attaches them together.</li>
+          <li>Officer places the spoiled ballot pkg. in Envelope #4.</li>
+          <li>Officer checks voter into pollbook and has them cast vote as normal. This may require the Chief's password.</li>
+          <li>Ballot officer indicates on the Ballot Record Report that an <strong>absentee</strong> ballot has been returned and spoiled.</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+    <!-- Card -->
+    <div class="card" id="unmarked">
+      <div class="card-body">
+        <h5 class="card-title">Voter’s name in the pollbook OR Final Absentee List shows status as “Issued” or “Unmarked.”</h5>
+        <p class="card-text">Call the Election Office to ask if voter returned an unmarked ballot.</p>
+        <ol>
+          <li>If GR tells you that voter returned an unmarked ballot, have voter cast vote as normal.</li>
+          <li>If GR tells you that voter did not return their ballot or you cannot reach the Election Office, have voter <a href="provisional.html">vote a provisional ballot using Reason #4</a>.</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+    <!-- Card -->
+    <div class="card" id="marked">
+      <div class="card-body">
+        <h5 class="card-title">Voter’s name in the pollbook OR Final Absentee List shows status as “Marked” or “On Machine.”</h5>
+        <ol>
+          <li>If voter’s record says ‘marked’ or ‘on machine’ (instead of “issued”) voter has already voted and cannot vote again.</li>
+          <li>If voter says they did not vote, they can cast a <a href="provisional.html">Provisional Ballot using Reason #5</a></li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+   <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    This site is not affiliated with the VA Dept of Elections in any way. It was created as a way to learn and streamline decisions processes.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

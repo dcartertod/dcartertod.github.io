@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Flagged in Pollbook</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script type="text/javascript" src="utilities.js">
+    </script>
+    <style>
+      .btn-primary {
+        --mdb-btn-active-bg: #19335c;
+	      }
+        .card {
+          display: none;
+        }
+        #level2 .container-md{
+          display: none
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <i class="fas fa-house" style="color: #1266f1; "></i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/">VA Dept. of Elections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/casting-a-ballot/polling-place-lookup/">Polling Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status">My Status</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="p-2 text-center bg-body-tertiary mb-2">
+  <h1>Flagged in Pollbook</h1>
+  <a href="javascript:showEl('hava','b1'); hideEl('qmoved');" id="b1" class="btn btn-primary">Help America Vote Act (HAVA)</a>
+  <a href="javascript:showEl('qmoved','b2'); " id="b2" class="btn btn-primary"><i class="fas fa-question fa-lg"></i> or "Inactive" or "Marked for address confirmation"</a>
+  <a href="javascript:showEl('federal','b3'); hideEl('qmoved'); " id="b3" class="btn btn-primary"><i class="fas fa-f fa-lg"></i> (Federal symbol)</a>
+  <a href="javascript:showEl('provisional','b4'); hideEl('qmoved'); " id="b4" class="btn btn-primary">Marked as Already Voted</a>
+  
+</div>
+
+<div class="container" id="level2">
+
+  <div class="container-md pb-2" id="qmoved">
+  <p>Has the voter moved?</p>
+    <a href="javascript:showEl('a3','q1b2');" id="q1b2" class="btn btn-primary">Yes</a>
+    <a href="javascript:showEl('a2','q1b3');" id="q1b3" class="btn btn-primary">No</a>
+
+    <h3 class="pt-2">Why does this happen?</h3>
+      <p>Voter was sent an address confirmation notice and the Elections Office did not receive a response. The confirmation notice was sent because:
+      <ul>
+      <li>There was a possible address change OR</li>
+      <li>Previous mailings from the Election Office were returned as undeliverable.</li>
+    </ul>
+    </p>
+  </div>
+  
+</div>
+    
+<div class="container pb-3">
+
+    <!-- Card -->
+    <div class="card" id="hava">
+        <div class="card-body">
+          <h5 class="card-title">HAVA Voter</h5>
+          <p class="card-text">The voter must present one of the following:
+            <ul>
+            <li>A current and valid photo identification.</li>
+            <li>A copy of a current utility bill, bank statement, government paycheck, paycheck, or other government document containing the name and address of the voter.</li>
+            </ul>
+            If the voter does not have an acceptable form of ID, <a href="provisional.html">have them vote a provisional ballot</a>. An ID Confirmation Statement is not acceptable in these circumstances.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card" id="a2">
+        <div class="card-body">
+          <h5 class="card-title">Affirmation of Eligibility Procedure</h5>
+          <p class="card-text">If the voter has NOT MOVED but IS FLAGGED, you must challenge the voter using the Affirmation of Eligibility Form.
+          <ol>
+            <li>Officer fills out and initials Section A on the Affirmation of Eligibility and checks Box A.</li>
+            <li>Officer does not complete Statement of Challenger section (leave blank).</li>
+            <li>Voter fills out and signs Section B – Affirmation of Voter.</li>
+            <li>Officer makes sure voter signs Section B.</li>
+            <li>Officer checks voter into the pollbook and indicates in the pollbook that a statement was signed. Depending on how your pollbooks are set up, you might need to enter the Chief’s password.</li>
+            <li>Officer places completed documents in Envelope #8.</li>
+            <li>Voter casts ballot as normal in precinct.</li>
+          </ol>  
+          </p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card " id="a3">
+        <div class="card-body">
+          <h5 class="card-title">Address Changes</h5>
+          <p class="card-text">Work through the <a href="address.html">Address Rules</a>.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card " id="federal">
+        <div class="card-body">
+          <h5 class="card-title">Voter marked with federal symbol <i class="fas fa-f fa-lg"></i> in pollbook</h5>
+          <p class="card-text">
+            <ol>
+              <li>Find the Federal-Only Ballot Record Report and follow instructions</li>
+              <li>Check voter into the pollbook</li>
+              <li>Check ‘Federal Only’ flag</li>
+              <li>Give voter a Federal Only ballot</li>
+            </ol>
+          </p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card " id="provisional">
+        <div class="card-body">
+          <h5 class="card-title">Provisional Ballot</h5>
+          <p class="card-text">The voter can vote a <a href="provisional.html">Provisional Ballot</a> <strong>assuming no other issues</strong>.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+   <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    This site is not affiliated with the VA Dept of Elections in any way. It was created as a way to learn and streamline decisions processes.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

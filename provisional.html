@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Provisional Ballots</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script type="text/javascript" src="utilities.js">
+    </script>
+    <style>
+      .btn-primary {
+        --mdb-btn-active-bg: #19335c;
+	      }
+        .card {
+          display: none;
+        }
+        #level2 .container-md{
+          display: none
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <i class="fas fa-house" style="color: #1266f1; "></i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/">VA Dept. of Elections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/casting-a-ballot/polling-place-lookup/">Polling Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status">My Status</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="p-2 bg-body-tertiary mb-2 mx-auto " style="max-width: 600px;">
+  <h1 class="text-center">Provisional Ballots</h1>
+  <h2>Same Day Registration (or not on pollbook)</h2>
+  <p>Voter not on the pollbook and:</p>
+  <ul>
+    <li>is unregistered and otherwise qualified to register using Same Day Registration;</li>
+    <li>is a resident of the precinct or has been since the November general election last year; or,</li>
+    <li>has been a resident of the precinct for the last two federal elections, is now a resident of the county or city, and current residence is in the same congressional district as this precinct.</li>
+  </ul>
+  <h2>Non-Same Day Registration</h2>
+  <ol start="3">
+    <li>Voter is voting after hours due to court order.</li>
+    <li>Voter applied for an absentee ballot, but does not have the ballot with them.</li>
+    <li>Voter is shown in the pollbook as already having voted.</li>
+    <li>Other (any reason not captured in the other codes).</li>
+    <li>Voter did not show required ID and did not sign a statement swearing to their identity.</li>
+  </ol>
+  <a href="javascript:showEl('cast','b1','sdr'); " id="b1" class="btn btn-primary">Same Day Registration</a>
+  <a href="javascript:showEl('cast','b2','nonsdr'); " id="b2" class="btn btn-primary">Non-SDR</a>
+  <p>Provisional ballots must be cast in the precinct where the voter is qualified to vote—this usually means the provisional ballot will be cast in the precinct where the voter currently lives.</p>
+  
+</div>
+
+<div class="container" id="level2">
+  
+</div>
+    
+<div class="container pb-3">
+
+    <!-- Card -->
+    <div class="card" id="sdr">
+      <div class="card-body">
+        <h5 class="card-title">Voter Using Same Day Registration (or not on pollbook).</h5>
+        <p class="card-text">Complete only Same Day Registration (SDR) side of provisional envelope</p>
+        <ol>
+          <li>Voter completes SDR side of envelope and signs the affirmation statement</li>
+          <li>Officer selects “Reason Code #1: Same Day Registration (or not on pollbook)” in ELECTION OFFICER box on the envelope</li>
+          <li>Officer asks voter for ID and selects “Yes” or “No” to question “Did voter show ID or complete ID Confirmation Statement?” in the ELECTION OFFICER box on the envelope</li>
+          <li>Officer signs envelope in ELECTION OFFICER box on envelope</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+    <!-- Card -->
+    <div class="card" id="nonsdr">
+      <div class="card-body">
+        <h5 class="card-title">Non-SDR Voter using Reason Codes #3-7</h5>
+        <p class="card-text">Complete only Non-SDR side of provisional envelope</p>
+        <ol>
+          <li>Voter completes non-SDR side of envelope and signs the Statement of Voter</li>
+          <li>Officer asks voter for ID. If ID is not provided (and ID Confirmation Statement is not completed), Officer selects “Reason Code #7: Voter does not have required ID and declined to complete ID Confirmation Statement” in ELECTION OFFICER box on envelope</li>
+          <li>Officer marks all other applicable Reason Codes #3-6 as reason for casting a provisional ballot in ELECTION OFFICER box on envelope</li>
+          <li>Officer signs envelope in ELECTION OFFICER box on envelope</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+    <!-- Card -->
+    <div class="card" id="cast">
+      <div class="card-body">
+        <h5 class="card-title">Voter casts provisional ballot</h5>
+        <ol>
+          <li>Officer gets a ballot from the ballot officer.</li>
+          <li>Ballot Officer marks on the Ballot Record Report that a provisional ballot was used.</li>
+          <li>Voter votes a ballot and seals ballot in the provisional ballot envelope.</li>
+          <li>Officer copies the information from the green provisional envelope onto Provisional Ballot Log.</li>
+          <li>Officer places the envelope in provisional ballot box.</li>
+          <li>Officer gives voter the green Provisional Voter Notice.</li>
+          <li>Officer checks voter in as a provisional voter or otherwise indicates in the pollbook that voter voted a provisional ballot</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Card -->
+
+
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+   <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    This site is not affiliated with the VA Dept of Elections in any way. It was created as a way to learn and streamline decisions processes.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

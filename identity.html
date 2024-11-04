@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Identity Issues</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script type="text/javascript" src="utilities.js">
+    </script>
+    <style>
+      .btn-primary {
+        --mdb-btn-active-bg: #19335c;
+	      }
+        .card {
+          display: none;
+        }
+        #level2 .container-md{
+          display: none
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <i class="fas fa-house" style="color: #1266f1; "></i>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/">VA Dept. of Elections</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.elections.virginia.gov/casting-a-ballot/polling-place-lookup/">Polling Place</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status">My Status</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="p-2 text-center bg-body-tertiary mb-2">
+  <h1>Identity Issues</h1>
+  <p>Have you double-checked against <a href="https://www.elections.virginia.gov/media/formswarehouse/voter-id/outreach-materials/documents/Voter-Identification-Chart---Revised-10.2022.pdf">the list of acceptable forms of identity</a>? If you are unsure, you can call the Registrar.</p>
+  <a href="javascript:showEl('q1','b1');hideEl('q2') " id="b1" class="btn btn-primary">ID is not acceptable</a>
+  <a href="javascript:showEl('q2','b1a');hideEl('q1');" id="b1a" class="btn btn-primary">Pollbook name does not match</a>
+</div>
+
+<div class="container" id="level2">
+
+  <div class="container-md pb-2" id="q1">
+  <p>Is the voter is willing to sign an ID Confirmation Statement?</p>
+    <a href="javascript:showEl('a1','q1b2');" id="q1b2" class="btn btn-primary">Yes</a>
+    <a href="javascript:showEl('a2','q1b3');" id="q1b3" class="btn btn-primary">No</a>
+  </div>
+
+  <div class="container-md  pb-2 " id="q2">
+      <a href="javascript:showEl('a4','q2b4');" id="q2b4" class="btn btn-primary">The name on the ID is similar</a>
+      <a href="javascript:showEl('a3','q2b5');" id="q2b5" class="btn btn-primary">I do not believe the ID is the voter</a>
+    </div>
+</div>
+  
+<div class="container pb-3">
+
+    <!-- Card -->
+      <!-- Card -->
+      <div class="card " id="a1">
+        <div class="card-body">
+          <h5 class="card-title">Confirmation Statement</h5>
+          <p class="card-text">The voter may sign an ID Confirmation Statement. Place the completed statement in Envelope #8.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+      <div class="card " id="a4">
+        <div class="card-body">
+          <h5 class="card-title">Name is Similar</h5>
+          <p class="card-text">
+            <ol>
+              <li>Allow voter to vote if the name on the voter’s ID is:
+            <ul>
+              <li>Similar to the name in the pollbook; and/or</li>
+              <li>Lists a maiden name, nickname, or initials instead of the full name.</li>
+            </ul>
+          </li>
+            <li>Ask voter to complete and sign a Voter Registration Application.</li>
+            <li>Officer places completed application in Envelope #8.</li>
+          </p>
+        </div>
+      </div>
+      <!-- Card -->
+
+
+      <!-- Card -->
+      <div class="card " id="a3">
+        <div class="card-body">
+          <h5 class="card-title">Challenged Voter</h5>
+          <p class="card-text">If you believe the person on the ID is not the voter, use the Affirmation of Eligibility to challenge the voter.</p>
+          <a href="javascript:showEl('a5','a3b1','a3');" id="a3b1" class="btn btn-primary">The voter will sign it</a>
+          <a href="javascript:showEl('a2','a3b2','a3')" id="a3b2" class="btn btn-primary">The voter will NOT sign it</a>          
+        </div>
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card" id="a5">
+        <div class="card-body">
+          <h5 class="card-title">Affirmation of Eligibility Procedure</h5>
+          <p class="card-text">
+          <ol>
+            <li>Officer fills out and initials Section A on the Affirmation of Eligibility and checks Box C.</li>
+            <li>Officer (or other Challenger) fills out and signs the Statement of Challenger using Reason #7.</li>
+            <li>Voter fills out and signs Section B – Affirmation of Voter.</li>
+            <li>Officer makes sure voter signs Section B.</li>
+            <li>Officer checks voter into the pollbook and indicates in the pollbook that a statement was signed.</li>
+            <li>Officer places completed documents in Envelope #8.</li>
+            <li>Voter casts ballot as normal in precinct.</li>
+          </ol>  
+          </p>
+        </div>
+      </div>
+      <!-- Card -->
+      
+      <!-- Card -->
+      <div class="card  " id="a2">
+        <div class="card-body">
+          <h5 class="card-title">Provisional Ballot</h5>
+          <p class="card-text">The voter can vote a <a href="provisional.html">Provisional Ballot</a> using Reason #7.</p>
+        </div>
+      </div>
+      <!-- Card -->
+
+    </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+   <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    This site is not affiliated with the VA Dept of Elections in any way. It was created as a way to learn and streamline decisions processes.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>
