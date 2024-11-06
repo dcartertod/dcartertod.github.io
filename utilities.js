@@ -50,6 +50,10 @@ function showEl(el,bel,keepEl){
     console.log("home: " + home);
     console.log("when: " + when);
 
+    if (document.getElementById('addressq3').style.display == 'none'){
+      when = -1;
+    }
+
     if (reg==0 && home==0){
       showEl('a1');
       hideEl('addressq3');
