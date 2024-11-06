@@ -61,7 +61,7 @@ function showEl(el,bel,keepEl){
     debug("when: " + when);
     debug("display: " + document.getElementById('addressq3').style.display);
 
-    if (document.getElementById('addressq3').style.display == 'none'){
+    if (document.getElementById('addressq3').style.display == 'none' || document.getElementById('addressq3').style.display == ''){
       when = -1;
       debug("when: " + when);
     }
