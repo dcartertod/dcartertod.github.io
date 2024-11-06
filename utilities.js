@@ -31,6 +31,15 @@ function showEl(el,bel,keepEl){
     document.getElementById(el).style.display='block';
   }
 
+  function debug(msg){
+    if (window.location.search.indexOf('debug')>-1){
+      alert(msg);
+    }
+    else {
+      console.log(msg);
+    }
+  }
+
   function addressChoice(){
     var reg = document.getElementById('addressq1s').value;
 
@@ -47,18 +56,14 @@ function showEl(el,bel,keepEl){
     var home = document.getElementById('addressq2s').value;
     var when = document.getElementById('addressq3s').value;
 
-    console.log("reg: " + reg);
-    console.log("home: " + home);
-    console.log("when: " + when);
-
-    if (window.location.search.indexOf('debug')>-1){
-      alert("reg: " + reg);
-      alert("home: " + home);
-      alert("when: " + when);
-    }
+    debug("reg: " + reg);
+    debug("home: " + home);
+    debug("when: " + when);
+    debug("display: " + document.getElementById('addressq3').style.display);
 
     if (document.getElementById('addressq3').style.display == 'none'){
       when = -1;
+      debug("when: " + when);
     }
 
     if (reg==0 && home==0){
