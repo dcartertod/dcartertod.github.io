@@ -64,6 +64,7 @@ function showEl(el,bel,keepEl){
     if (document.getElementById('addressq3').style.display == 'none' || document.getElementById('addressq3').style.display == ''){
       when = -1;
       debug("when: " + when);
+      document.getElementById('addressq2s').selectedIndex=0;
     }
 
     if (reg==0 && home==0){
