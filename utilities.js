@@ -68,7 +68,7 @@ function showEl(el,bel,keepEl){
     }
 
     if (reg==0 && home==0){
-      showEl('a1');
+      showEl('movedWithinPrecinct');
       hideEl('addressq3');
       return;
     }
@@ -110,10 +110,10 @@ function showEl(el,bel,keepEl){
       // live in district NOT precinct
       if (home == 1){
         if (when == 0){
-          showEl('a2');
+          showEl('movedFromHereRecently');
         }
         if (when == 1){
-          showEl('a3');
+          showEl('movedFromHereNotRecently');
         }
         if (when == 2){
           showEl('provisional');
@@ -122,7 +122,7 @@ function showEl(el,bel,keepEl){
       // live in VA but different county/city/district
       if (home == 2){
         if (when == 0){
-          showEl('a2');
+          showEl('movedFromHereRecently');
         }
         if (when >= 1){
           showEl('provisional');
@@ -136,11 +136,11 @@ function showEl(el,bel,keepEl){
       if (reg == 1){
         // moved recently
         if (when==0){
-          showEl('a2NotThis');
+          showEl('movedToHereRecently');
         }
         // moved fairly recently within district
         if (when==1){
-          showEl('a3NotThis');
+          showEl('movedToHereNotRecently');
         }
         // moved a long time ago within district to this precinct
         if (when==2){
@@ -150,7 +150,7 @@ function showEl(el,bel,keepEl){
       // registered in VA but different county/city/district
       if (reg == 2){
         if (when == 0){
-          showEl('a2NotThis');
+          showEl('movedToHereRecently');
         }
         if (when >= 1){
           showEl('provisionalThis');
