@@ -209,7 +209,10 @@ function setDates(){
 		element.innerText = dayOneFromToLong();
 	});
 
-	document.querySelector('.addressq3s').options[1].text = "On or after " + d0.toLocaleDateString();
-	document.querySelector('.addressq3s').options[2].text = shortDayFromTo();
-	document.querySelector('.addressq3s').options[3].text = "On or before " + dayOneBeforeShort();
+  var addressChooser = document.querySelector('.addressq3s');
+  if (addressChooser){
+    addressChooser.options[1].text = "On or after " + d0.toLocaleDateString();
+    addressChooser.options[2].text = shortDayFromTo();
+    addressChooser.options[3].text = "On or before " + dayOneBeforeShort();
+  }
 }
