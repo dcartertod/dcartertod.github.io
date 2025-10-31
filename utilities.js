@@ -157,7 +157,7 @@ function addressChoice(){
       }
     }
   }
-
+  setDates();
 }
 
 const d0 = new Date("2024-11-06");
@@ -198,16 +198,18 @@ function shortDayFromTo(){
 	return result;
 }
 
-Array.from(document.querySelectorAll('.longDateAfter')).forEach((element,index) =>
-{
-	element.innerText = dayZeroLong();
-});
+function setDates(){
+	Array.from(document.querySelectorAll('.longDateAfter')).forEach((element,index) =>
+	{
+		element.innerText = dayZeroLong();
+	});
 
-Array.from(document.querySelectorAll('.longDateFromTo')).forEach((element,index) =>
-{
-	element.innerText = dayOneFromToLong();
-});
+	Array.from(document.querySelectorAll('.longDateFromTo')).forEach((element,index) =>
+	{
+		element.innerText = dayOneFromToLong();
+	});
 
-document.querySelector('.addressq3s').options[1].text = "On or after " + d0.toLocaleDateString();
-document.querySelector('.addressq3s').options[2].text = shortDayFromTo();
-document.querySelector('.addressq3s').options[3].text = "On or before " + dayOneBeforeShort();
+	document.querySelector('.addressq3s').options[1].text = "On or after " + d0.toLocaleDateString();
+	document.querySelector('.addressq3s').options[2].text = shortDayFromTo();
+	document.querySelector('.addressq3s').options[3].text = "On or before " + dayOneBeforeShort();
+}
