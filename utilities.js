@@ -160,7 +160,7 @@ function addressChoice(){
   setDates();
 }
 
-const d0 = new Date("2024-11-06 EST");
+const d0 = new Date("2025-11-05 EST");
 const d1 = new Date("2022-11-09 EST");
 
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
